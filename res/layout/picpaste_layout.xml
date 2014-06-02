@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content">
+  <Button
+      android:id="@+id/start_camera_button"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:text="@string/camera_button"/>
+  <TextView
+      android:id="@+id/image_url_textview"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:autoLink="web"/>
+</LinearLayout>

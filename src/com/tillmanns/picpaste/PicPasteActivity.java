@@ -159,31 +159,31 @@ public class PicPasteActivity extends Activity {
 	    FileOutputStream ostream = null;
 	    try {
 		Bitmap bm = BitmapFactory.decodeFile(imagePath);
-	    Integer height = bm.getHeight();
-	    Integer width = bm.getWidth();
-	    Integer newWidth;
-	    Integer newHeight;
+		Integer height = bm.getHeight();
+		Integer width = bm.getWidth();
+		Integer newWidth;
+		Integer newHeight;
 
-	    if (height > width) {
-		Double scale = 600. / height;
+		if (height > width) {
+		    Double scale = 600. / height;
 
-		newWidth = (int) Math.round(scale * width);
-		newHeight = 600;
-	    } else {
-		Double scale = 600. / width;
+		    newWidth = (int) Math.round(scale * width);
+		    newHeight = 600;
+		} else {
+		    Double scale = 600. / width;
 
-		newHeight = (int) Math.round(scale * height);
-		newWidth = 600;
-	    }
-	    bm = Bitmap.createScaledBitmap(bm, newWidth, newHeight, false);
+		    newHeight = (int) Math.round(scale * height);
+		    newWidth = 600;
+		}
+		bm = Bitmap.createScaledBitmap(bm, newWidth, newHeight, false);
 
-	    File file = new File(imagePath);
-	    file.createNewFile();
+		File file = new File(imagePath);
+		file.createNewFile();
 
-	    ostream = new FileOutputStream(file);
-	    bm.compress(Bitmap.CompressFormat.JPEG, 100, ostream);
-	    ostream.close();
-    	    uploadImage(imagePath);
+		ostream = new FileOutputStream(file);
+		bm.compress(Bitmap.CompressFormat.JPEG, 100, ostream);
+		ostream.close();
+		uploadImage(imagePath);
 
 	    } catch (Exception e) {
 		Log.e(TAG, "unable to resize file, and therefore unable to upload it", e);
